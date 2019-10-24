@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    top: 31.25rem;
+    font-family: 'Open sans', sans-serif;
+    background-color: #555;
+}
+
+h1 {
+    text-transform: uppercase;
+    margin: 0.625rem 0 1.25rem 0;
+    letter-spacing: 0.125rem;
+}
+
+main {
+    width: 62.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 90%;
+    background-color: #fff;
+}
+
+.btn {
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.625rem;
+    margin: 0.625rem 1.25rem;
+    box-shadow: none;
+}
+
+.cpu-display {
+    height: 6.25rem;
+    width: 6.25rem;
+    border: 1px solid #333;
+    margin: auto;
+}
+
+.result {
+    height: 100px;
+    width: 100px;
+    background-color: #fff;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.cpu-display,
+.result {
+    text-align: center;
+    line-height: 6.25rem;
+}
+
+.reset {
+    margin: 1.5rem 0;
+}
+
+.kalah {
+    background-color: pink;
+}
+
+.menang {
+    background-color: blue;
+}
+
+.seri {
+    background-color: yellow;
+}
