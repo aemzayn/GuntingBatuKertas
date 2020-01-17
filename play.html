@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Gunting Batu Kertas</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Rakkas&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <main>
+        <!-- CPU -->
+        <div class="box cpu">
+            <div class="nametag">
+                <h1 class="name">CPU</h1>
+                <div class="score" id="cpu-score">
+                    <p>0</p>
+                </div>
+            </div>
+
+            <div class="cpu-display">
+            </div>
+        </div>
+        <!-- CPU END -->
+
+        <!-- PLAYER 1 -->
+        <div class="box player">
+
+            <!-- Button untuk milih gunting batu kertas -->
+            <div class="btn-action">
+                <button class="btn btn-player gunting">Gunting</button>
+                <button class="btn btn-player batu">Batu</button>
+                <button class="btn btn-player kertas">Kertas</button>
+            </div>
+
+            <!-- p1 nama dan score -->
+            <div class="nametag">
+                <h1 class="name">YOU</h1>
+                <div class="score" id="p-score">
+                    <p>0</p>
+                </div>
+            </div>
+        </div>
+        <!-- P1 END -->
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

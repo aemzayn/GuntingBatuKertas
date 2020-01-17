@@ -63,11 +63,14 @@ kertas.addEventListener('click', function () {
     }
 })
 
+
+//CPU PICK
 function cpuPick() {
     cpuRand = Math.floor(Math.random() * 3);
     return cpu[cpuRand];
 }
 
+//RANDOM
 reset.addEventListener('click', function () {
     cpuDisplay.textContent = '';
     result.textContent = '';
