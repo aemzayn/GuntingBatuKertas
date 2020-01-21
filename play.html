@@ -14,39 +14,49 @@
 </head>
 
 <body>
-    <div class="bottom">
+    <div class="base">
         <main>
             <!-- CPU -->
             <div class="box cpu">
                 <div class="nametag">
                     <h1>CPU</h1>
                     <div class="score" id="cpu-score">
-                        <p>0</p>
+                        <p id="cpu-score">0</p>
                     </div>
                 </div>
 
-                <div class="display cpu-display">
+                <div id="cpu" class="display">
+                    <div id="cpu-display" class="vertical-center cpu-display">
+
+                    </div>
                 </div>
             </div>
             <!-- CPU END -->
 
+            <h1 class="vs">VS</h1>
             <!-- PLAYER 1 -->
             <div class="box player">
 
                 <!-- Button untuk milih gunting batu kertas -->
+                <div id="p" class="display">
+                    <div id="p-display" class="vertical-center p-display">
+
+                    </div>
+                </div>
+
                 <div class="btn-action">
                     <button class="btn btn-player gunting"><img src="images/hand-scissors.svg"
                             alt="hand-scissors"></button>
                     <button class="btn btn-player batu"><img src="images/hand-rock.svg" alt="hand-rock"></button>
                     <button class="btn btn-player kertas"><img src="images/hand-paper.svg" alt="hand-paper"></button>
                 </div>
-                <div class="display cpu-display"></div>
+
 
                 <!-- p1 nama dan score -->
                 <div class="nametag">
                     <h1 class="name">YOU</h1>
-                    <div class="score" id="p-score">
-                        <p>0</p>
+                    <div class="score">
+                        <p id="p-score">0</p>
                     </div>
 
                 </div>

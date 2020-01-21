@@ -7,72 +7,156 @@ Pengondisian
 Return hasil ke display
 */
 
-var cpu, cpuDisplay, gunting, batu, kertas, cpuPick, result, reset;
+var cpuChoices, gunting, batu, kertas, cpuPick;
+// var reset;
 
-cpu = ['gunting', 'batu', 'kertas'];
+cpuChoices = ['gunting', 'batu', 'kertas'];
 
+//Action buttons
 gunting = document.querySelector('.gunting');
 batu = document.querySelector('.batu');
 kertas = document.querySelector('.kertas');
-cpuDisplay = document.querySelector('.cpu-display');
-result = document.querySelector('.result');
-reset = document.querySelector('.reset');
 
-gunting.addEventListener('click', function () {
+//cpu
+var cpuDisplay, cpu;
+cpuDisplay = document.getElementById('cpu-display');
+cpu = document.getElementById('cpu');
+
+//player
+var pDisplay, p;
+pDisplay = document.getElementById('p-display');
+p = document.getElementById('p');
+
+//both
+var display = document.querySelector('.display');
+
+
+gunting.addEventListener('click', function () { //p1 gunting
     cpuPick();
     var i = cpuPick();
-    if (cpuPick() == 'gunting') {
-        cpuDisplay.textContent = 'Gunting'
-        result.textContent = 'Seri';
+    pDisplay.textContent = 'Gunting';
+    if (i == 'gunting') {
+        cpuDisplay.textContent = 'Gunting'; //seri
+        seri();
+
     } else if (i == 'batu') {
-        cpuDisplay.textContent = 'Batu'
-        result.textContent = 'Kalah';
-    } else {
-        cpuDisplay.textContent = 'Kertas'
-        result.textContent = 'Menang';
+        cpuDisplay.textContent = 'Batu' //p kalah
+        pLose();
+    } else if (i == 'kertas') {
+        cpuDisplay.textContent = 'Kertas' //p menang
+        pWin();
     }
 })
 
 batu.addEventListener('click', function () {
     cpuPick();
     var i = cpuPick();
-    if (cpuPick() == 'gunting') {
-        cpuDisplay.textContent = 'Gunting'
-        result.textContent = 'Menang';
+    pDisplay.textContent = 'Batu';
+    if (i == 'gunting') {
+        cpuDisplay.textContent = 'Gunting'; //p menang
+        pWin();
     } else if (i == 'batu') {
-        cpuDisplay.textContent = 'Batu'
-        result.textContent = 'Seri';
+        cpuDisplay.textContent = 'Batu'; //seri
+        seri();
     } else {
-        cpuDisplay.textContent = 'Kertas'
-        result.textContent = 'Kalah';
+        cpuDisplay.textContent = 'Kertas'; //p kalah
+        pLose();
     }
 })
 
 kertas.addEventListener('click', function () {
     cpuPick();
     var i = cpuPick();
-    if (cpuPick() == 'gunting') {
-        cpuDisplay.textContent = 'Kalah'
-        result.textContent = 'Seri';
+    pDisplay.textContent = 'Kertas';
+    if (i == 'gunting') {
+        cpuDisplay.textContent = 'Gunting'; //p kalah
+        pLose();
     } else if (i == 'batu') {
-        cpuDisplay.textContent = 'Menang'
-        result.textContent = 'Kalah';
+        cpuDisplay.textContent = 'Batu'; //p menang
+        pWin();
     } else {
-        cpuDisplay.textContent = 'Kertas'
-        result.textContent = 'Seri';
+        cpuDisplay.textContent = 'Kertas'; //seri
+        seri();
     }
 })
 
 
 //CPU PICK
 function cpuPick() {
-    cpuRand = Math.floor(Math.random() * 3);
-    return cpu[cpuRand];
+    var cpuRand = Math.floor(Math.random() * 3); // returns a random integer from 0 to 2
+    return cpuChoices[cpuRand];
 }
 
-//RANDOM
-reset.addEventListener('click', function () {
-    cpuDisplay.textContent = '';
-    result.textContent = '';
-    result.style.background = '#fff';
-})
+
+//Kondisi
+var pWin, pLose, cpuWin, cpuLose, tie;
+
+function pWin() {
+    //add score to p
+    addScoreP();
+
+    //add win class to p and lose class to cpu
+    p.classList.add('menang');
+    cpu.classList.add('kalah');
+
+    //remove other classes
+    p.classList.remove('kalah');
+    p.classList.remove('seri');
+
+    cpu.classList.remove('menang');
+    cpu.classList.remove('seri');
+
+}
+
+function pLose() {
+    //add score to cpu
+    addScoreCpu();
+
+    //add lose class to p and win class to cpu
+    p.classList.add('kalah');
+    cpu.classList.add('menang');
+
+    //remove other classes
+    p.classList.remove('menang');
+    p.classList.remove('seri');
+
+    cpu.classList.remove('kalah');
+    cpu.classList.remove('seri');
+}
+
+function seri() {
+    //add tie class to both p and cpu
+    p.classList.add('seri');
+    cpu.classList.add('seri');
+
+    //remove other classes
+    p.classList.remove('menang');
+    p.classList.remove('kalah');
+
+    cpu.classList.remove('menang');
+    cpu.classList.remove('kalah');
+}
+
+//score
+var pScore, cpuDisplay, pScoreDisplay, cpuScoreDisplay;
+pScore = 0;
+cpuScore = 0;
+
+pScoreDisplay = document.getElementById('p-score');
+cpuScoreDisplay = document.getElementById('cpu-score');
+
+//pwin function
+
+function addScoreP() {
+    pScore++;
+    pScoreDisplay.innerHTML = pScore;
+    console.log("p score " + pScore);
+}
+
+//cpuwin function
+
+function addScoreCpu() {
+    cpuScore++;
+    console.log("cpu score " + cpuScore);
+    cpuScoreDisplay.innerHTML = cpuScore;
+}

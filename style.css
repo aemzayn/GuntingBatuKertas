@@ -14,15 +14,13 @@ body {
 
 main {
     width: 65%;
-    margin: 40px auto;
-    height: 90vh;
+    margin: 2.5em auto;
 
 }
 
 h1 {
     font-family: 'Rakkas', cursive;
     text-transform: uppercase;
-    color: #00ADB5;
 }
 
 h3 {
@@ -38,29 +36,52 @@ a {
     font-family: 'Open Sans', sans-serif;
 }
 
-.box {}
-
-.bottom {
+.vertical-display,
+.cpu-display,
+.p-display {
+    position: absolute;
+    top: 50%;
     width: 100%;
-    height: 100vh;
+    transform: translateY(-50%);
+    font-size: 25px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.box {
+    color: #eeeeee;
+}
+
+.base {
+    width: 100%;
     background-image: url(images/bg.svg);
     background-repeat: no-repeat;
     background-position-y: 40%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
 }
 
 .nametag {
+    color: #eeeeee;
     display: inline-block;
     width: 100%;
     text-align: right;
-    font-size: 30px;
+    font-size: 1.875em;
     font-family: 'Rakkas', cursive;
-    color: #eeeeee;
 }
 
 .nametag h1 {
     font-size: 30px;
     float: left;
     margin-bottom: 20px;
+}
+
+.vs {
+    font-size: 6.250em;
+    color: #00ADB5;
 }
 
 .score {
@@ -70,21 +91,24 @@ a {
 
 .btn {
     display: inline-block;
-    padding: 15px;
-    border-radius: 100%;
+    border-radius: 10px;
     border: none;
-    margin: 10px 15px;
+    margin: 0 0.625em;
     outline: none;
 }
 
 .btn-action {
     width: 100%;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 .btn img {
     width: 30px;
     height: 30px;
+}
+
+.btn-player {
+    padding: 15px;
 }
 
 .display {
@@ -93,7 +117,26 @@ a {
     width: 100%;
     height: 134px;
     text-align: center;
-    align-content: center;
-    vertical-align: middle;
     background-color: #741841;
+    position: relative;
+}
+
+.kertas img {
+    transform: rotate(45deg);
+}
+
+.gunting img {
+    transform: rotate(45deg);
+}
+
+.menang {
+    border-color: #00FF55;
+}
+
+.kalah {
+    border-color: #FF0000;
+}
+
+.seri {
+    border-color: black;
 }
