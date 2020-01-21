@@ -7,7 +7,7 @@
 body {
     background: transparent linear-gradient(180deg, #C31432 0%, #240B36 100%) 0% 0% no-repeat padding-box;
     height: 100vh;
-    max-height: 100vh;
+    max-height: fit-content;
     text-align: center;
     overflow: hidden;
 }
@@ -28,7 +28,6 @@ h3 {
     font-size: 1.25rem;
     color: #eeeeee;
     text-transform: uppercase;
-
 }
 
 a {
@@ -57,6 +56,7 @@ a {
     width: 100%;
     background-image: url(images/bg.svg);
     background-repeat: no-repeat;
+    background-size: contain;
     background-position-y: 40%;
     position: absolute;
     top: 50%;
@@ -99,7 +99,9 @@ a {
 
 .btn-action {
     width: 100%;
-    margin: 20px 0;
+    margin: 1.250em 0;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .btn img {
@@ -108,7 +110,8 @@ a {
 }
 
 .btn-player {
-    padding: 15px;
+    padding: 0.5rem;
+    flex-shrink: 1;
 }
 
 .display {
@@ -139,4 +142,10 @@ a {
 
 .seri {
     border-color: black;
+}
+
+@media (min-width: 600px) {
+    .base {
+        background: none;
+    }
 }
