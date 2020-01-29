@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Gunting Batu Kertas</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Rakkas&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="base">
+
+        <div class="match-container">
+
+            <!-- CPU -->
+            <div class="box cpu">
+
+                <!-- CPU's Name and Score -->
+                <div class="name-score">
+                    <h2 class="name">CPU</h2>
+                    <p id="cpu-score">0</p>
+                </div>
+
+                <!-- CPU's Choices Display -->
+                <div id="cpu" class="display">
+                    <div id="cpu-display" class="cpu-display">
+
+                    </div>
+                </div>
+            </div>
+            <!-- CPU END -->
+
+
+            <h1 class="vs">VS</h1>
+
+
+            <!-- PLAYER 1 -->
+            <div class="box player">
+
+                <!-- Button untuk milih gunting batu kertas -->
+                <div id="p" class="display">
+                    <div id="p-display" class="p-display">
+
+                    </div>
+                </div>
+
+                <div class="btn-action">
+                    <button class="btn btn-player gunting"><img src="images/gunting.svg" alt="hand-scissors"></button>
+                    <button class="btn btn-player batu"><img src="images/batu.svg" alt="hand-rock"></button>
+                    <button class="btn btn-player kertas"><img src="images/kertas.svg" alt="hand-paper"></button>
+                </div>
+
+
+                <!-- p1 nama dan score -->
+                <div class="name-score">
+                    <h2 class="name">YOU</h2>
+                    <p id="p-score">0</p>
+                </div>
+            </div>
+            <!-- P1 END -->
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
