@@ -6,45 +6,41 @@ Ketika user memencet tombol maka CPU pun akan me-return hasil dari pilihan rando
 Pengondisian
 Return hasil ke display
 */
-
-var cpuChoices, gunting, batu, kertas, cpuPick;
 // var reset;
 
-cpuChoices = ['scissors', 'rock', 'paper'];
+const cpuChoices = ['gunting', 'batu', 'kertas'];
 
 //Action buttons
-gunting = document.querySelector('.gunting');
-batu = document.querySelector('.batu');
-kertas = document.querySelector('.kertas');
+const gunting = document.querySelector('.gunting');
+const batu = document.querySelector('.batu');
+const kertas = document.querySelector('.kertas');
 
 //cpu
-var cpuDisplay, cpu;
-cpuDisplay = document.getElementById('cpu-display');
-cpu = document.getElementById('cpu');
+const cpuDisplay = document.getElementById('cpu-display');
+const cpu = document.getElementById('cpu');
 
 //player
-var pDisplay, p;
-pDisplay = document.getElementById('p-display');
-p = document.getElementById('p');
+const pDisplay = document.getElementById('p-display');
+const p = document.getElementById('p');
 
 //both
-var display = document.querySelector('.display');
+const display = document.querySelector('.display');
 
 
 gunting.addEventListener('click', function () { //p1 gunting
     cpuPick();
     var i = cpuPick();
-    pDisplay.textContent = 'Scissors';
-    if (i == 'scissors') {
-        cpuDisplay.textContent = i; //seri
-        seri();
-
-    } else if (i == 'rock') {
-        cpuDisplay.textContent = i //p kalah
-        pLose();
-    } else if (i == 'paper') {
-        cpuDisplay.textContent = i //p menang
+    pDisplay.textContent = 'scissors';
+    if (i == 'kertas') {
+        cpuDisplay.textContent = 'paper'; //seri
         pWin();
+
+    } else if (i == 'batu') {
+        cpuDisplay.textContent = 'rock' //p kalah
+        pLose();
+    } else if (i == 'gunting') {
+        cpuDisplay.textContent = 'scissors' //p menang
+        seri();
     }
 })
 
@@ -52,14 +48,14 @@ batu.addEventListener('click', function () {
     cpuPick();
     var i = cpuPick();
     pDisplay.textContent = 'rock';
-    if (i == 'scissors') {
-        cpuDisplay.textContent = i; //p menang
+    if (i == 'gunting') {
+        cpuDisplay.textContent = 'Scissors'; //p menang
         pWin();
-    } else if (i == 'rock') {
-        cpuDisplay.textContent = i; //seri
+    } else if (i == 'batu') {
+        cpuDisplay.textContent = 'Rock'; //seri
         seri();
-    } else {
-        cpuDisplay.textContent = i; //p kalah
+    } else if (i == 'kertas') {
+        cpuDisplay.textContent = 'paper'; //p kalah
         pLose();
     }
 })
@@ -68,18 +64,17 @@ kertas.addEventListener('click', function () {
     cpuPick();
     var i = cpuPick();
     pDisplay.textContent = 'paper';
-    if (i == 'scissors') {
-        cpuDisplay.textContent = i; //p kalah
+    if (i == 'gunting') {
+        cpuDisplay.textContent = 'scissors'; //p kalah
         pLose();
-    } else if (i == 'rock') {
-        cpuDisplay.textContent = i; //p menang
+    } else if (i == 'batu') {
+        cpuDisplay.textContent = 'rock'; //p menang
         pWin();
-    } else {
-        cpuDisplay.textContent = i; //seri
+    } else if (i == 'kertas') {
+        cpuDisplay.textContent = 'paper' //seri
         seri();
     }
 })
-
 
 //CPU PICK
 function cpuPick() {
@@ -138,12 +133,11 @@ function seri() {
 }
 
 //score
-var pScore, cpuDisplay, pScoreDisplay, cpuScoreDisplay;
-pScore = 0;
-cpuScore = 0;
-
-pScoreDisplay = document.getElementById('p-score');
-cpuScoreDisplay = document.getElementById('cpu-score');
+//  pScore, cpuDisplay, pScoreDisplay, cpuScoreDisplay;
+var pScore = 0;
+var cpuScore = 0;
+var pScoreDisplay = document.getElementById('p-score');
+var cpuScoreDisplay = document.getElementById('cpu-score');
 
 //pwin function
 
